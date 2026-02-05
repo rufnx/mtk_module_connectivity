@@ -1,7 +1,7 @@
 # Mediatek external kernel modules
 
 > [!NOTE]
-> Imported from `SM-A226B/Platform.tar.gz/drivers/misc/mediatek/connectivity`
+> Imported from [camellia-r-oss](https://github.com/MiCode/Xiaomi_Kernel_OpenSource.git)
 >
 > Supported platform: `MT6833`
 
