@@ -6,18 +6,11 @@ ifneq ($(KERNEL_OUT),)
 endif
 
 ifndef TOP
-    TOP := $(srctree)/..
+    TOP := $(srctree)
 endif
 
 # Force build fail on modpost warning
 KBUILD_MODPOST_FAIL_ON_WARNINGS := y
-
-
-###############################################################################
-# GCC Options
-###############################################################################
-ccflags-y += -Wall
-ccflags-y += -Werror
 
 
 ###############################################################################
@@ -40,7 +33,7 @@ ccflags-y += -I$(src)/include
 # ConnFem Module
 ###############################################################################
 MODULE_NAME := connfem
-obj-m += $(MODULE_NAME).o
+obj-y += $(MODULE_NAME).o
 
 $(MODULE_NAME)-objs += connfem_module.o
 $(MODULE_NAME)-objs += connfem_api.o

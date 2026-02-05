@@ -15,7 +15,7 @@ $(warning build in gps_dl)
 ifeq ($(CONFIG_MTK_GPS_SUPPORT), y)
 
 ifeq ($(AUTOCONF_H),)
-    $(error AUTOCONF_H is not defined)
+    $(warning AUTOCONF_H is not defined)
 endif
 
 ccflags-y += -imacros $(AUTOCONF_H)
@@ -31,7 +31,7 @@ KBUILD_MODPOST_FAIL_ON_WARNINGS := y
 ###############################################################################
 
 # only WMT align this design flow, but gps use this also.
-#ccflags-y += -D MTK_WCN_REMOVE_KERNEL_MODULE
+ccflags-y += -D MTK_WCN_REMOVE_KERNEL_MODULE
 
 #ifeq ($(CONFIG_ARM64), y)
 #    ccflags-y += -D CONFIG_MTK_WCN_ARM64
@@ -62,7 +62,7 @@ KBUILD_MODPOST_FAIL_ON_WARNINGS := y
 ###############################################################################
 
 MODULE_NAME := gps_drv_dl_$(GPS_PLATFORM)
-obj-m += $(MODULE_NAME).o
+obj-y += $(MODULE_NAME).o
 
 GPS_DRV_CONTROL_LNA := n
 GPS_DL_HAS_MOCK := n

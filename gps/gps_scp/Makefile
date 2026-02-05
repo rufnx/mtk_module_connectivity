@@ -19,7 +19,7 @@ ifneq ($(KERNEL_OUT),)
 endif
 
 ifndef TOP
-    TOP := $(srctree)/..
+    TOP := $(srctree)
 endif
 ifeq ($(TARGET_BUILD_VARIANT),$(filter $(TARGET_BUILD_VARIANT),userdebug user))
     ldflags-y += -s
@@ -33,7 +33,7 @@ ccflags-y += -I$(srctree)/drivers/misc/mediatek/conn_scp/conap_scp
 ###############################################################################
 GPS2SCP_TEST_SUPPORT :=n
 MODULE_NAME := gps_scp
-obj-m += $(MODULE_NAME).o
+obj-y += $(MODULE_NAME).o
 
 $(MODULE_NAME)-objs += gps2scp.o
 ifeq ($(GPS2SCP_TEST_SUPPORT),y)

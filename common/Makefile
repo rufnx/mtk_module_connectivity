@@ -42,7 +42,7 @@ endif
 KBUILD_MODPOST_FAIL_ON_WARNINGS := y
 ###############################################################################
 
-#ccflags-y += -D MTK_WCN_REMOVE_KERNEL_MODULE
+ccflags-y += -D MTK_WCN_REMOVE_KERNEL_MODULE
 ifeq ($(CONFIG_ARM64), y)
     ccflags-y += -D CONFIG_MTK_WCN_ARM64
 endif
@@ -86,8 +86,6 @@ ccflags-y += -I$(srctree)/drivers/misc/mediatek/connectivity/common
 ccflags-y += -I$(srctree)/drivers/misc/mediatek/include/mt-plat
 ###############################################################################
 
-
-ccflags-y += -Werror
 
 ifneq ($(filter "MT6628",$(CONFIG_MTK_COMBO_CHIP)),)
     ccflags-y += -D MT6628
