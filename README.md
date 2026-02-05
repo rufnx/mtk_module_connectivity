@@ -1,7 +1,7 @@
 # Mediatek external kernel modules
 
 > [!NOTE]
-> Imported from `SM-A226B/Platform.tar.gz/vendor/mediatek/kernel_modules/connectivity`
+> Imported from `SM-A226B/Platform.tar.gz/drivers/misc/mediatek/connectivity`
 >
 > Supported platform: `MT6833`
 
