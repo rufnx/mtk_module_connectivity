@@ -33,32 +33,32 @@ KBUILD_MODPOST_FAIL_ON_WARNINGS := y
 # only WMT align this design flow, but gps use this also.
 ccflags-y += -D MTK_WCN_REMOVE_KERNEL_MODULE
 
-#ifeq ($(CONFIG_ARM64), y)
-#    ccflags-y += -D CONFIG_MTK_WCN_ARM64
-#endif
+ifeq ($(CONFIG_ARM64), y)
+    ccflags-y += -D CONFIG_MTK_WCN_ARM64
+endif
 
-#ifeq ($(CONFIG_MTK_CONN_LTE_IDC_SUPPORT),y)
-#    ccflags-y += -D WMT_IDC_SUPPORT=1
-#else
-#    ccflags-y += -D WMT_IDC_SUPPORT=0
-#endif
-#ccflags-y += -D MTK_WCN_WMT_STP_EXP_SYMBOL_ABSTRACT
+ifeq ($(CONFIG_MTK_CONN_LTE_IDC_SUPPORT),y)
+    ccflags-y += -D WMT_IDC_SUPPORT=1
+else
+    ccflags-y += -D WMT_IDC_SUPPORT=0
+endif
+ccflags-y += -D MTK_WCN_WMT_STP_EXP_SYMBOL_ABSTRACT
 
-#ccflags-y += -I$(srctree)/drivers/misc/mediatek/include
-#ccflags-y += -I$(srctree)/drivers/misc/mediatek/include/mt-plat
-#ccflags-y += -I$(srctree)/drivers/misc/mediatek/include/mt-plat/$(MTK_PLATFORM)/include
-#ccflags-y += -I$(srctree)/drivers/misc/mediatek/include/mt-plat/$(MTK_PLATFORM)/include/mach
-#ccflags-y += -I$(srctree)/drivers/misc/mediatek/freqhopping
-#ccflags-y += -I$(srctree)/drivers/misc/mediatek/freqhopping/$(MTK_PLATFORM)
-#ccflags-y += -I$(srctree)/drivers/misc/mediatek/emi/submodule
-#ccflags-y += -I$(srctree)/drivers/misc/mediatek/emi/$(MTK_PLATFORM)
-#ccflags-y += -I$(srctree)/drivers/misc/mediatek/connectivity/common
-#ccflags-y += -I$(srctree)/drivers/misc/mediatek/mach/$(MTK_PLATFORM)/include/mach
-#ccflags-y += -I$(srctree)/drivers/misc/mediatek/base/power/$(MTK_PLATFORM)
-#ccflags-y += -I$(srctree)/drivers/misc/mediatek/base/power/include
-#ccflags-y += -I$(srctree)/drivers/misc/mediatek/base/power/include/clkbuf_v1
-#ccflags-y += -I$(srctree)/drivers/misc/mediatek/base/power/include/clkbuf_v1/$(MTK_PLATFORM)
-#ccflags-y += -I$(srctree)/drivers/devfreq
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/include
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/include/mt-plat
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/include/mt-plat/$(MTK_PLATFORM)/include
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/include/mt-plat/$(MTK_PLATFORM)/include/mach
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/freqhopping
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/freqhopping/$(MTK_PLATFORM)
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/emi/submodule
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/emi/$(MTK_PLATFORM)
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/connectivity/common
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/mach/$(MTK_PLATFORM)/include/mach
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/base/power/$(MTK_PLATFORM)
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/base/power/include
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/base/power/include/clkbuf_v1
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/base/power/include/clkbuf_v1/$(MTK_PLATFORM)
+ccflags-y += -I$(srctree)/drivers/devfreq
 ###############################################################################
 
 MODULE_NAME := gps_drv_dl_$(GPS_PLATFORM)
