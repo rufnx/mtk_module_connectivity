@@ -22,5 +22,13 @@ CONFIG_MTK_FMRADIO=y
 ```
 CONFIG_DRV_BUILD_IN=y
 ```
+Or force in Kconfig
+```
+config DRV_BUILD_IN
+       bool "Mtk module connectivity"
+       help
+       default y
+```
+
 # Bootloop issue
 Bootloops can be caused by the drivers in `/vendor/lib/modules/*.ko` conflicting with drivers inline. Removing `/vendor/lib/modules/` can solve it.
