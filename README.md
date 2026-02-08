@@ -25,9 +25,16 @@ CONFIG_DRV_BUILD_IN=y
 Or force in Kconfig
 ```
 config DRV_BUILD_IN
-       bool "Mtk module connectivity"
-       help
-       default y
+	bool "MTK Connectivity Driver"
+	default y
+	help
+	  Enable MediaTek connectivity drivers (GPS / WiFi / BT).
+
+	  If enabled, the MTK connectivity drivers will be built
+	  into the kernel image (built-in).
+
+	  If disabled, the drivers can be built as loadable
+	  kernel modules.
 ```
 
 # Bootloop issue
