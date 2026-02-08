@@ -3,7 +3,7 @@
 > [!NOTE]
 > Imported from [camellia-r-oss](https://github.com/MiCode/Xiaomi_Kernel_OpenSource.git)
 >
-> Supported platform: `MT6833`
+> Supported platform: `MT6833` and `6853`
 
 > [!WARNING]
 > This driver is intended only for 4.14.x. Not for 4.9.x and below or 4.19.x and above.
